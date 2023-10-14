@@ -21,8 +21,12 @@ function visualize_traffic_lights_with_pedestrian(x, y, z)
     
     % Draw roads
     fill([-10, 10, 10, -10], [2, 2, -2, -2], GREY); % Horizontal road
-    fill([-2, 2, 2, -2], [-10, -10, 10, 10], GREY); % Vertical road
+    fill([-2, 2, 2, -2], [2, 2, 10, 10], GREY); % Up road
+    fill([-2, -2, 2, 2], [2, -2, -2, 2], GREY);% middle road
+    fill([-2, 2, 2, -2], [-2, -2, -10, -10], GREY);% Bottom road
 
+
+    %fill([-2, 2, 2, -2], [2, 2, 10, 10], GREY);
     % Initialize traffic and pedestrian lights
     ns_light = GREEN;
     ew_light = RED;
