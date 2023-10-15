@@ -31,27 +31,32 @@ function visualize_traffic_lights_with_pedestrian(x, y, z)
     ns_ped_light1 = WALK;
     ns_ped_light2 = WALK;
     ew_ped_light1 = DONT_WALK;
+    ew_ped_light2 = DONT_WALK;
 
     while true
         % Draw North-South traffic lights
-        draw_traffic_light(0, 4, ns_light);
-        draw_traffic_light(0, -4, ns_light);
-        draw_pedestrian_light(-4, 8, ns_ped_light1);
-        draw_pedestrian_light(4, -8, ns_ped_light1);
+        draw_traffic_light(0, 2, ns_light);
+        draw_traffic_light(0, -2, ns_light);
+        draw_pedestrian_light(-3, 4, ns_ped_light1);
+        draw_pedestrian_light(3, 4, ns_ped_light2);
+        draw_pedestrian_light(3, -4, ns_ped_light1);
+        draw_pedestrian_light(-3, -4, ns_ped_light2);
 
         % Draw East-West traffic lights
-        draw_traffic_light(4, 0, ew_light);
-        draw_traffic_light(-4, 0, ew_light);
-        draw_pedestrian_light(-8, -4, ew_ped_light1);
-        draw_pedestrian_light(8, 4, ew_ped_light1);
+        draw_traffic_light(2, 0, ew_light);
+        draw_traffic_light(-2, 0, ew_light);
+        draw_pedestrian_light(-4, -3, ew_ped_light1);
+        draw_pedestrian_light(4, -3, ew_ped_light2);
+        draw_pedestrian_light(4, 3, ew_ped_light1);
+        draw_pedestrian_light(-4, 3, ew_ped_light2);
 
         pause(x);
         
-        % Change North-South to YELLOW, East-West remains RED
+           % Change North-South to YELLOW, East-West remains RED
         ns_light = YELLOW;
         ns_ped_light1 = DONT_WALK;
-        draw_traffic_light(0, 4, ns_light);
-        draw_traffic_light(0, -4, ns_light);
+        draw_traffic_light(0, 2, ns_light);
+        draw_traffic_light(0, -2, ns_light);
         draw_pedestrian_light(-4, 8, ns_ped_light1);
         draw_pedestrian_light(4, -8, ns_ped_light1);
         pause(y);
@@ -61,12 +66,12 @@ function visualize_traffic_lights_with_pedestrian(x, y, z)
         ew_light = GREEN;
         ns_ped_light1 = DONT_WALK;
         ew_ped_light1 = WALK;
-        draw_traffic_light(0, 4, ns_light);
-        draw_traffic_light(0, -4, ns_light);
+        draw_traffic_light(0, 2, ns_light);
+        draw_traffic_light(0, -2, ns_light);
         draw_pedestrian_light(-4, 8, ns_ped_light1);
         draw_pedestrian_light(4, -8, ns_ped_light1);
-        draw_traffic_light(-4, 0, ew_light);
-        draw_traffic_light(4, 0, ew_light);
+        draw_traffic_light(-2, 0, ew_light);
+        draw_traffic_light(2, 0, ew_light);
         draw_pedestrian_light(-8, -4, ew_ped_light1);
         draw_pedestrian_light(8, 4, ew_ped_light1);
         pause(x);
@@ -74,8 +79,8 @@ function visualize_traffic_lights_with_pedestrian(x, y, z)
         % Change East-West to YELLOW, North-South remains RED
         ew_light = YELLOW;
         ew_ped_light1 = DONT_WALK;
-        draw_traffic_light(0, 4, ew_light);
-        draw_traffic_light(0, -4, ew_light);
+        draw_traffic_light(0, 2, ew_light);
+        draw_traffic_light(0, -2, ew_light);
         draw_pedestrian_light(-8, -4, ew_ped_light1);
         draw_pedestrian_light(8, 4, ew_ped_light1);
         pause(y);
