@@ -1,2 +1,6 @@
 Code in matlab
 You can directly click app1.mlapp for testing
+
+Functions:
+1.You can set green and yellow light time, the red light time will be automaticly calculated by system. 
+2.Click start buttom to simulate the system and click stop to end.
